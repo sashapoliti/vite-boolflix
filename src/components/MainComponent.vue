@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul><h2>Movies</h2>
     <li class="mt-2" v-for="movie in storage.movies">
       <ol>
         <li>{{ movie.title }}</li>
@@ -15,6 +15,8 @@
                 ? 'fi fi-cz'
                 : movie.original_language === 'ja'
                 ? 'fi fi-jp'
+                : movie.original_language === 'ko'
+                ? 'fi fi-kr'
                 : `fi fi-${movie.original_language}`
             "
           ></span>
@@ -23,7 +25,8 @@
       </ol>
     </li>
   </ul>
-  <ul>
+
+  <ul><h2>Series</h2>
     <li class="mt-2" v-for="series in storage.series">
       <ol>
         <li>{{ series.name }}</li>
@@ -39,6 +42,8 @@
                 ? 'fi fi-cz'
                 : series.original_language === 'ja'
                 ? 'fi fi-jp'
+                : series.original_language === 'ko'
+                ? 'fi fi-kr'
                 : `fi fi-${series.original_language}`
             "
           ></span>

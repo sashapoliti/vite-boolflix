@@ -13,5 +13,5 @@ export const storage = reactive({
         }
     },
     movies : [],
-    series : [],
+    series : []
 });
