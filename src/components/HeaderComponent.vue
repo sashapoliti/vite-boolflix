@@ -24,4 +24,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+header {
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+}
+</style>
