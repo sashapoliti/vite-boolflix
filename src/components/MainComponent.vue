@@ -2,6 +2,7 @@
   <ul><h2>Movies</h2>
     <li class="mt-2" v-for="movie in storage.movies">
       <ol>
+        <li><img :src="storage.imageUrl + movie.poster_path" :alt="movie.original_title"></li>
         <li>{{ movie.title }}</li>
         <li>{{ movie.original_title }}</li>
         <li>
@@ -29,6 +30,7 @@
   <ul><h2>Series</h2>
     <li class="mt-2" v-for="series in storage.series">
       <ol>
+        <li><img :src="storage.imageUrl + series.poster_path" :alt="series.original_title"></li>
         <li>{{ series.name }}</li>
         <li>{{ series.original_name }}</li>
         <li>
