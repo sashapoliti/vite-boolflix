@@ -21,7 +21,7 @@
             "
           ></span>
         </li>
-        <li>{{ movie.vote_average }}</li>
+        <li>{{ transformVote(movie.vote_average) }}</li>
       </ol>
     </li>
   </ul>
@@ -48,7 +48,7 @@
             "
           ></span>
         </li>
-        <li>{{ series.vote_average }}</li>
+        <li>{{ transformVote(series.vote_average) }}</li>
       </ol>
     </li>
   </ul>
@@ -61,8 +61,13 @@ export default {
   data() {
     return {
       storage,
-    };
+    }
   },
+  methods: {
+    transformVote(vote) {
+      return Math.ceil(vote / 2);
+    },
+  }
 };
 </script>
 
