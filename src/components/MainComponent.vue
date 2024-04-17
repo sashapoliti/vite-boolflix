@@ -1,16 +1,16 @@
 <template>
-  <main class="container">
-    <CardCarousel />
+  <main>
+    <CardList />
   </main>
 </template>
 
 <script>
 import { storage } from "../data/storage.js";
-import CardCarousel from "./CardCarousel.vue";
+import CardList from "./CardList.vue";
 export default {
   name: "MainComponent",
   components: {
-    CardCarousel,
+    CardList,
   },
   data() {
     return {

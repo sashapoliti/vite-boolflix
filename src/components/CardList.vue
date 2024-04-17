@@ -1,5 +1,8 @@
 <template>
-  <ul>
+    <div class="cards-list d-flex flex-wrap mt-5 ">
+        <CardComponent v-for="movie in storage.movies" :key="movie.id" :movie="movie" />
+    </div>
+  <!-- <ul>
     <h2>Movies</h2>
     <li class="mt-2" v-for="movie in storage.movies">
       <ol>
@@ -72,34 +75,25 @@
         <li>{{ transformVote(series.vote_average) }}</li>
       </ol>
     </li>
-  </ul>
+  </ul> -->
 </template>
 
 <script>
 import { storage } from "../data/storage.js";
+import CardComponent from "./CardComponent.vue";
 export default {
-  name: "CardCarousel",
-  components: {},
+  name: "CardList",
+  components: {
+    CardComponent,
+  },
   data() {
     return {
       storage,
     };
-  },
-  methods: {
-    transformVote(vote) {
-      return Math.ceil(vote / 2);
-    },
-    getStarClass(index, vote) {
-      if (index <= vote) {
-        return "fa fa-star";
-      } else {
-        return "far fa-star";
-      }
-    },
-  },
+  }
 };
 </script>
 
-<style lang="scss" scoped>
-@import "/node_modules/flag-icons/css/flag-icons.min.css";
+<style lang="scss">
+  
 </style>
