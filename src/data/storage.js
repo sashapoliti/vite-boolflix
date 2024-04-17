@@ -9,8 +9,7 @@ export const storage = reactive({
     options : {
         params : {
             api_key : '9e338abc216e9177a5ac8c366d5d489e',
-            query : 'a'
+            query : ''
         }
-    }
-    
-})
+    }    
+});

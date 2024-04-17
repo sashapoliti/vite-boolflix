@@ -1,13 +1,16 @@
 <template>
-  <h1 class="text-center">Ciao</h1>
-  <i class="fa fa-solid fa-home"></i>
+  <HeaderComponent @startSearch="getMovies(), getSeries()" />
 </template>
 
 <script>
 import axios from 'axios';
 import { storage } from './data/storage.js'
+import HeaderComponent from './components/HeaderComponent.vue'
   export default {
     name: 'App',
+    components: {
+      HeaderComponent
+    },
     data() {
       return {
         storage
@@ -18,10 +21,15 @@ import { storage } from './data/storage.js'
           axios.get(this.storage.apiUrl + this.storage.endPoint.movie, this.storage.options).then((res) => {
             console.log(res.data.results);
           })
+        },
+        getSeries() {
+          axios.get(this.storage.apiUrl + this.storage.endPoint.series, this.storage.options).then((res) => {
+            console.log(res.data.results);
+          })
         }
       },
       created() {
-        this.getMovies();
+        
       }
   }
 </script>
