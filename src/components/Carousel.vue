@@ -1,8 +1,9 @@
 <template>
-  <div class="carousel">
-      <img :src="storage.jumboSlides[visibleSlide]" alt="">
-
+  <div class="carousel d-flex ">
       <button @click="next" class="next">Next</button>
+      <div class="slide">
+        <img :src="storage.jumboSlides[visibleSlide]" alt=""> 
+      </div>     
       <button @click="prev" class="prev">Prev</button>
   </div>
 </template>
@@ -42,23 +43,24 @@ export default {
 <style lang="scss" scoped>
 .carousel {
   position: relative;
-  width: 1200px;
   height: 450px;
   margin: 0 auto;
-  box-shadow: 0 2px 8px 3px #000;
+  .slide {
+    overflow: hidden;
+    width: calc(100% - 100px);
+    box-shadow: 0 2px 8px 3px #000;
+  }
   button {
-    position: absolute;
-    height: 40px;
+    height: 100%;
     width: 50px;
-    top: calc(50% - 20px);
     border: none;
     background-color: transparent;
     color: white;
     &.next {
-      right: -50px;
+      padding-right: 10px;
     }
     &.prev {
-      left: -50px;
+      padding-left: 10px;
     }
   }
 }

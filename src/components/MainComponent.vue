@@ -3,6 +3,10 @@
     <!-- main section - home -->
     <section class="home" v-if="!storage.options.params.query">
       <Carousel />
+
+      <div class="filter-cards d-flex justify-content-between">
+        <HomeMenuCard v-for="card in storage.filterMenu" :media="card" />
+      </div>
     </section>
 
     <!-- section for search movies -->
@@ -21,11 +25,13 @@
 import { storage } from "../data/storage.js";
 import CardList from "./CardList.vue";
 import Carousel from "./Carousel.vue";
+import HomeMenuCard from "./HomeMenuCard.vue";
 export default {
   name: "MainComponent",
   components: {
     CardList,
-    Carousel
+    Carousel,
+    HomeMenuCard,
   },
   data() {
     return {
@@ -43,7 +49,12 @@ export default {
 main {
   padding-top: 100px;
   section.home {
+    margin: 0 auto;
+    max-width: 1800px;
     color: $c-text;
+    .filter-cards {
+      margin: 50px;
+    }
   }
 }
 </style>
