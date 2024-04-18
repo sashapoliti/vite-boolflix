@@ -1,12 +1,16 @@
 <template>
   <main>
+    <!-- main section - home -->
+    <section class="home" v-if="!storage.options.params.query">
+      <Carousel />
+    </section>
 
-    <!-- section for movies -->
+    <!-- section for search movies -->
     <section>
       <CardList :cards="storage.movies" />
     </section>
 
-    <!-- section for series -->
+    <!-- section for search series -->
     <section>
       <CardList :cards="storage.series" />
     </section>
@@ -16,23 +20,30 @@
 <script>
 import { storage } from "../data/storage.js";
 import CardList from "./CardList.vue";
+import Carousel from "./Carousel.vue";
 export default {
   name: "MainComponent",
   components: {
     CardList,
+    Carousel
   },
   data() {
     return {
       storage,
+      
     };
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
-main {
-  padding-top: 60px;
-}
+@use "../assets/styles/partials/variables" as *;
 
+main {
+  padding-top: 100px;
+  section.home {
+    color: $c-text;
+  }
+}
 </style>
