@@ -1,6 +1,7 @@
 <template>
   <main>
-    <CardList />
+    <CardList :cards="storage.movies" />
+    <CardList :cards="storage.series" />
   </main>
 </template>
 

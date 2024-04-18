@@ -14,7 +14,7 @@
     <input
       type="text"
       placeholder="Cerca..."
-      v-model="storage.options.params.query"
+      v-model.trim="storage.options.params.query"
       @keyup.enter="$emit('startSearch')"
     />
     <button @click="$emit('startSearch')">
