@@ -3,12 +3,12 @@
     <img src="/images/disneylogo.png" alt="Logo Disney">
     <nav>
       <ul class="d-flex align-items-center h-100">
-        <li><a href="#"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
-        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span></a></li>
-        <li><a href="#"><i class="fa-solid fa-plus"></i> <span>Watchlist</span></a></li>
-        <li><a href="#"><i class="fa-solid fa-star"></i> <span>Originals</span></a></li>
-        <li><a href="#"><i class="fa-solid fa-film"></i> <span>Movies</span></a></li>
-        <li><a href="#"><i class="fa-solid fa-tv"></i> <span>Series</span></a></li>
+        <li><a href="#" @click.prevent=""><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+        <li><a href="#" @click.prevent=""><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span></a></li>
+        <li><a href="#" @click.prevent=""><i class="fa-solid fa-plus"></i> <span>Watchlist</span></a></li>
+        <li><a href="#" @click.prevent=""><i class="fa-solid fa-star"></i> <span>Originals</span></a></li>
+        <li><a href="#" @click.prevent=""><i class="fa-solid fa-film"></i> <span>Movies</span></a></li>
+        <li><a href="#" @click.prevent=""><i class="fa-solid fa-tv"></i> <span>Series</span></a></li>
       </ul>
     </nav>
     <input

@@ -1,7 +1,15 @@
 <template>
   <main>
-    <CardList :cards="storage.movies" />
-    <CardList :cards="storage.series" />
+
+    <!-- section for movies -->
+    <section>
+      <CardList :cards="storage.movies" />
+    </section>
+
+    <!-- section for series -->
+    <section>
+      <CardList :cards="storage.series" />
+    </section>
   </main>
 </template>
 

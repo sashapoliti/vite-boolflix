@@ -1,6 +1,6 @@
 <template>
     <div class="cards-list d-flex flex-wrap mt-5 ">
-        <CardComponent v-for="card in cards" :key="card.id" :movie="card" />
+        <CardComponent v-for="card in cards" :key="card.id" :media="card" />
     </div>
 </template>
 

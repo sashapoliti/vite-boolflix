@@ -1,23 +1,25 @@
 <template>
   <div class="flip-card" tabIndex="0">
     <div class="flip-card-inner">
-      <div
-        class="flip-card-front"
-        :style="`background-image: url(${storage.imageUrl}${movie.poster_path})`"
-      ></div>
+      <div class="flip-card-front">
+        <img :src="storage.imageUrl + media.poster_path" alt="" />
+      </div>
       <div class="flip-card-back">
         <ul>
-          <li><strong>Titolo</strong>: {{ movie.title }}</li>
-          <li><strong>Titolo originale</strong>: {{ movie.original_title }}</li>
+          <li><strong>Titolo</strong>: {{ media.title || media.name }}</li>
+          <li>
+            <strong>Titolo originale</strong>:
+            {{ media.original_title || media.original_name }}
+          </li>
           <li>
             <strong>Voto</strong>:
-            <span
-              v-for="index in 5"
-              :key="index"
-              :class="getStarClass(index, transformVote(movie.vote_average))"
-            ></span>
+            <i
+              v-for="n in 5"
+              class="fa-star"
+              :class="{ 'fa-solid': n <= transformVote, 'fa-regular': n > transformVote }"
+            ></i>
           </li>
-          <li><strong>Overview</strong>: {{ movie.overview }}</li>
+          <li><strong>Overview</strong>: {{ media.overview }}</li>
         </ul>
       </div>
     </div>
@@ -29,26 +31,19 @@ import { storage } from "../data/storage.js";
 export default {
   name: "CardComponent",
   props: {
-    movie: Object,
+    media: Object,
   },
   data() {
     return {
       storage,
     };
   },
-  methods: {
-    transformVote(vote) {
-      return Math.ceil(vote / 2);
-    },
-    getStarClass(index, vote) {
-      if (index <= vote) {
-        return "fa fa-star";
-      } else {
-        return "far fa-star";
-      }
-    },
+  methods: {},
+  computed: {
+    transformVote() {
+      return Math.ceil(this.media.vote_average / 2);
+    }
   },
-  computed: {},
 };
 </script>
 
@@ -84,6 +79,10 @@ export default {
       background-position: center;
       background-repeat: no-repeat;
       z-index: 2;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
     }
     .flip-card-back {
       padding: 10px;
