@@ -51,8 +51,9 @@ export default {
 @import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 .flip-card {
+  flex-shrink: 0;
   background-color: transparent;
-  width: calc(100% / 6 - 16px);
+  width: 200px;
   height: 300px;
   margin: 8px;
   perspective: 1000px;

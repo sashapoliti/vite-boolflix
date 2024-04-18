@@ -1,6 +1,8 @@
 <template>
   <header class="d-flex">
+    <!-- logo -->
     <img src="/images/disneylogo.png" alt="Logo Disney">
+    <!-- navbar -->
     <nav>
       <ul class="d-flex align-items-center h-100">
         <li><a href="#" @click.prevent=""><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
@@ -11,6 +13,7 @@
         <li><a href="#" @click.prevent=""><i class="fa-solid fa-tv"></i> <span>Series</span></a></li>
       </ul>
     </nav>
+    <!-- input -->
     <input
       type="text"
       placeholder="Cerca..."
@@ -20,6 +23,13 @@
     <button @click="$emit('startSearch')">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
+    <!-- profile -->
+    <div class="profile ms-auto d-flex align-items-center">
+      <span>Sasha Politi</span>
+      <div class="icon">
+        <img src="/images/profileicon.png" alt="Profile Icon">
+      </div>
+    </div>
   </header>
 </template>
 
@@ -70,6 +80,10 @@ header {
         }
       }
     }
+  }
+  .profile {
+    font-size: 0.9rem;
+    color: $c-text;
   }
 }
 </style>
