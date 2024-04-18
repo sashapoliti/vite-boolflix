@@ -1,5 +1,5 @@
 <template>
-    <div class="cards-list d-flex mt-5 ">
+    <div class="cards-list d-flex flex-wrap">
         <CardComponent v-for="card in cards" :key="card.id" :media="card" />
     </div>
 </template>
@@ -24,5 +24,7 @@ export default {
 </script>
 
 <style lang="scss">
-  
+.cards-list {
+  padding: 0 30px;
+}
 </style>

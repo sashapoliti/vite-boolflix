@@ -10,12 +10,14 @@
     </section>
 
     <!-- section for search movies -->
-    <section>
+    <section v-if="storage.options.params.query">
+      <h2>Movies</h2>
       <CardList :cards="storage.movies" />
     </section>
 
     <!-- section for search series -->
-    <section>
+    <section v-if="storage.options.params.query" class="mt-4">
+      <h2>Series</h2>
       <CardList :cards="storage.series" />
     </section>
   </main>
@@ -53,8 +55,12 @@ main {
     max-width: 1800px;
     color: $c-text;
     .filter-cards {
-      margin: 50px;
+      margin: 60px;
     }
+  }
+  h2 {
+    color: $c-text;
+    padding-left: 40px;
   }
 }
 </style>

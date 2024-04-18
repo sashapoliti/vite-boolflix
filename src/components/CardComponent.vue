@@ -1,28 +1,6 @@
 <template>
-  <div class="flip-card" tabIndex="0">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <img :src="storage.imageUrl + media.poster_path" alt="" />
-      </div>
-      <div class="flip-card-back">
-        <ul>
-          <li><strong>Titolo</strong>: {{ media.title || media.name }}</li>
-          <li>
-            <strong>Titolo originale</strong>:
-            {{ media.original_title || media.original_name }}
-          </li>
-          <li>
-            <strong>Voto</strong>:
-            <i
-              v-for="n in 5"
-              class="fa-star"
-              :class="{ 'fa-solid': n <= transformVote, 'fa-regular': n > transformVote }"
-            ></i>
-          </li>
-          <li><strong>Overview</strong>: {{ media.overview }}</li>
-        </ul>
-      </div>
-    </div>
+  <div class="card-search">
+    <img :src="media.backdrop_path ? `${storage.imageUrl}${media.backdrop_path}` : '/images/default.jpg'" alt="" />
   </div>
 </template>
 
@@ -42,65 +20,33 @@ export default {
   computed: {
     transformVote() {
       return Math.ceil(this.media.vote_average / 2);
-    }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "/node_modules/flag-icons/css/flag-icons.min.css";
+@use "../assets/styles/partials/variables" as *;
 
-.flip-card {
-  flex-shrink: 0;
-  background-color: transparent;
-  width: 200px;
-  height: 300px;
-  margin: 8px;
-  perspective: 1000px;
-  &:focus {
-    outline: 0;
+.card-search {
+  width: calc(100% / 6 - 20px);
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px 1px #030618;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+    border-color: $c-text;
   }
-  .flip-card-inner {
-    position: relative;
+  img {
     width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    max-height: 162px;
+    border-radius: 15px;
+    border: 2px solid $border;
+    &:hover {
+      border-color: $c-text;
     }
-    .flip-card-front {
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: 2;
-      overflow: hidden;
-      img {
-        width: 100%;
-      }
-    }
-    .flip-card-back {
-      padding: 10px;
-      background: black;
-      color: white;
-      transform: rotateY(180deg);
-      z-index: 1;
-      overflow-y: scroll;
-      ul {
-        margin: 0;
-        padding: 0;
-      }
-    }
-  }
-  &:hover .flip-card-inner,
-  &:focus .flip-card-inner {
-    transform: rotateY(180deg);
   }
 }
 </style>
