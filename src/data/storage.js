@@ -6,6 +6,7 @@ export const storage = reactive({
     movie: "search/movie",
     series: "search/tv",
     discoverSeries: "discover/tv?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_companies=670",
+    trending: 'trending/movie/day?language=en-US' 
   },
   options: {
     params: {
@@ -14,9 +15,10 @@ export const storage = reactive({
     },
   },
   imageUrl: "https://image.tmdb.org/t/p/original",
-  showVideo: true,
+  showVideo: false,
   movies: [],
   series: [],
+  trending: [],
   jumboSlides: [
     "/images/wish.jpg",
     "/images/simpson.jpg",

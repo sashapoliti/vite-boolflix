@@ -14,11 +14,24 @@
       </div>
 
       <div class="disney-classics">
+        <h4>What to Watch Tonight</h4>
+        <div class="wrap-more">
+          <div class="more d-flex align-items-center">
+            <div class="call-to-action w-25 d-flex flex-column align-items-center justify-content-center">
+              <img src="/images/more_logo.png" alt="">
+              <button>View More</button>
+            </div>
+            <div class="w-75">              
+              <CarouselList :cards="storage.trending" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="disney-classics">
         <h4>Disney Series</h4>
         <CarouselList :cards="storage.disneySeries" />
       </div>
-
-      ciao
     </section>
 
     <!-- section for search movies -->
@@ -52,7 +65,6 @@ export default {
   data() {
     return {
       storage,
-      
     };
   },
   methods: {},
@@ -64,9 +76,9 @@ export default {
 
 main {
   padding: 100px 30px 0;
-  margin: 0 auto; 
+  margin: 0 auto;
   max-width: 2400px;
-  section.home {       
+  section.home {
     color: $c-text;
     .filter-cards {
       margin: 60px 50px;
@@ -75,6 +87,40 @@ main {
       margin: 0 50px;
       h4 {
         font-weight: 600;
+      }
+      .wrap-more {
+        width: 100vw;
+        height: 300px;
+        margin-left: -80px;
+        margin-bottom: 50px;
+        background-image: url("/images/watchmore.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        .more {
+          height: 100%;
+          margin: 0 80px;
+          .call-to-action {
+            margin-top: -40px;
+            margin-right: 80px;
+            img {
+              width: 100%;
+            }
+            button {
+              font-size: 1.5rem;
+              font-weight: 600;
+              color: $c-text;
+              background-color: transparent;
+              padding: 5px 20px;
+              border: 2px solid $c-text;
+              &:hover {
+                background-color: $c-text;
+                color: #13387C;
+                transition-duration: 0.3S;
+              }
+            }
+          }
+        }
       }
     }
   }

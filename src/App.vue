@@ -6,6 +6,7 @@
       @startSearch="getMedia()"
     />
     <MainComponent :class="storage.showVideo ? 'd-none' : ''" />
+    <FooterComponent :class="storage.showVideo ? 'd-none' : ''" />
   </div>
 </template>
 
@@ -15,12 +16,14 @@ import { storage } from "./data/storage.js";
 import VideoStart from "./components/VideoStart.vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import MainComponent from "./components/MainComponent.vue";
+import FooterComponent from "./components/FooterComponent.vue";
 export default {
   name: "App",
   components: {
     HeaderComponent,
     MainComponent,
     VideoStart,
+    FooterComponent,
   },
   data() {
     return {
@@ -76,10 +79,22 @@ export default {
           this.storage.disneySeries = res.data.results;
         });
     },
+    getTrending() {
+      axios
+        .get(
+          this.storage.apiUrl + this.storage.endPoint.trending,
+          this.storage.options
+        )
+        .then((res) => {
+          console.log(res.data.results);
+          this.storage.trending = res.data.results;
+        });
+    },
   },
   created() {
     this.getDisney();
     this.getDisneySeries();
+    this.getTrending();
   },
 };
 </script>
