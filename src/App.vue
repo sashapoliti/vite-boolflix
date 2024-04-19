@@ -1,11 +1,18 @@
 <template>
-  <HeaderComponent @startSearch="getMedia()" />
-  <MainComponent />
+  <div class="wrapped">
+    <VideoStart />
+    <HeaderComponent
+      :class="storage.showVideo ? 'd-none' : ''"
+      @startSearch="getMedia()"
+    />
+    <MainComponent :class="storage.showVideo ? 'd-none' : ''" />
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 import { storage } from "./data/storage.js";
+import VideoStart from "./components/VideoStart.vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import MainComponent from "./components/MainComponent.vue";
 export default {
@@ -13,6 +20,7 @@ export default {
   components: {
     HeaderComponent,
     MainComponent,
+    VideoStart,
   },
   data() {
     return {
@@ -50,13 +58,13 @@ export default {
       axios
         .get(
           this.storage.apiUrl + this.storage.filterMenu[0].apiCall,
-          this.storage.options          
+          this.storage.options
         )
         .then((res) => {
           console.log(res.data.results);
           this.storage.filterMenu[0].movies = res.data.results;
-        })
-    }
+        });
+    },
   },
   created() {
     this.getDisney();
@@ -64,4 +72,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.wrapped {
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100%;
+}
+</style>

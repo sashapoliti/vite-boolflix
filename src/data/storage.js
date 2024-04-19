@@ -13,10 +13,11 @@ export const storage = reactive({
     },
   },
   imageUrl: "https://image.tmdb.org/t/p/original",
+  showVideo: true,
   movies: [],
   series: [],
   jumboSlides: [
-    "https://picsum.photos/id/237/1800/450",
+    "https://images.ecestaticos.com/2O8n-y2kcXMhWoRFN4uKIW-82cQ=/0x0:1918x1078/1600x900/filters:fill(white):format(jpg):quality(99):watermark(f.elconfidencial.com/file/a73/f85/d17/a73f85d17f0b2300eddff0d114d4ab10.png,0,860,1)/f.elconfidencial.com/original/506/c40/931/506c40931bdbb5de2b16db8dac8f3766.jpg",
     "https://picsum.photos/id/238/1800/450",
     "https://picsum.photos/id/239/1800/450",
     "https://picsum.photos/id/241/1800/450",

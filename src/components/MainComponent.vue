@@ -13,6 +13,11 @@
         <CarouselList :cards="storage.filterMenu[0].movies" />
       </div>
 
+      <div class="disney-classics">
+        <h4>Disney Classics</h4>
+        <CarouselList :cards="storage.filterMenu[0].movies" />
+      </div>
+
       ciao
     </section>
 
@@ -58,10 +63,10 @@ export default {
 @use "../assets/styles/partials/variables" as *;
 
 main {
-  padding-top: 100px;
-  section.home {
-    margin: 0 auto;
-    max-width: 1800px;
+  padding: 100px 30px 0;
+  margin: 0 auto; 
+  max-width: 2400px;
+  section.home {       
     color: $c-text;
     .filter-cards {
       margin: 60px 50px;

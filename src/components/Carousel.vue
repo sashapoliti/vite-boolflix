@@ -3,7 +3,7 @@
     <button @click="prev" class="prev d-flex align-items-center">
       <i class="fa-solid fa-chevron-left "></i>
     </button>
-    <div class="slide">
+    <div class="slide d-flex align-items-center justify-content-center ">
       <img :src="storage.jumboSlides[visibleSlide]" alt="" />
     </div>
     <button @click="next" class="next d-flex align-items-center justify-content-end">
@@ -46,12 +46,17 @@ export default {
 <style lang="scss" scoped>
 .carousel {
   position: relative;
-  height: 450px;
+  height: 550px;
   margin: 0 auto;
   .slide {
     overflow: hidden;
-    width: calc(100% - 100px);
+    width: 100%;
     box-shadow: 0 2px 8px 3px #000;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   button {
     font-size: 2.7rem;

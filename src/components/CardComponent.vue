@@ -27,6 +27,7 @@ export default {
 
 .card-search {
   width: calc(100% / 6 - 20px);
+  
   margin: 10px;
   border-radius: 15px;
   box-shadow: 0 4px 12px 1px #030618;
@@ -38,9 +39,10 @@ export default {
   }
   img {
     width: 100%;
-    max-height: 162px;
+    aspect-ratio: 16/9;
     border-radius: 15px;
     border: 2px solid $border;
+    object-fit: fill;
     &:hover {
       border-color: $c-text;
     }
