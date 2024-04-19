@@ -14,8 +14,8 @@
       </div>
 
       <div class="disney-classics">
-        <h4>Disney Classics</h4>
-        <CarouselList :cards="storage.filterMenu[0].movies" />
+        <h4>Disney Series</h4>
+        <CarouselList :cards="storage.disneySeries" />
       </div>
 
       ciao

@@ -65,9 +65,21 @@ export default {
           this.storage.filterMenu[0].movies = res.data.results;
         });
     },
+    getDisneySeries() {
+      axios
+        .get(
+          this.storage.apiUrl + this.storage.endPoint.discoverSeries,
+          this.storage.options
+        )
+        .then((res) => {
+          console.log(res.data.results);
+          this.storage.disneySeries = res.data.results;
+        });
+    },
   },
   created() {
     this.getDisney();
+    this.getDisneySeries();
   },
 };
 </script>

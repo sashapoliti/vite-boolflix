@@ -5,6 +5,7 @@ export const storage = reactive({
   endPoint: {
     movie: "search/movie",
     series: "search/tv",
+    discoverSeries: "discover/tv?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_companies=670",
   },
   options: {
     params: {
@@ -17,12 +18,12 @@ export const storage = reactive({
   movies: [],
   series: [],
   jumboSlides: [
-    "https://images.ecestaticos.com/2O8n-y2kcXMhWoRFN4uKIW-82cQ=/0x0:1918x1078/1600x900/filters:fill(white):format(jpg):quality(99):watermark(f.elconfidencial.com/file/a73/f85/d17/a73f85d17f0b2300eddff0d114d4ab10.png,0,860,1)/f.elconfidencial.com/original/506/c40/931/506c40931bdbb5de2b16db8dac8f3766.jpg",
-    "https://picsum.photos/id/238/1800/450",
-    "https://picsum.photos/id/239/1800/450",
-    "https://picsum.photos/id/241/1800/450",
-    "https://picsum.photos/id/243/1800/450",
-    "https://picsum.photos/id/230/1800/450",
+    "/images/wish.jpg",
+    "/images/simpson.jpg",
+    "/images/guardians.jpg",
+    "/images/insideout.jpg",
+    "/images/natgeo.jpg",
+    "/images/more.jpg",
   ],
   filterMenu: [
     {
@@ -61,5 +62,6 @@ export const storage = reactive({
         overEffect: false,
         apiCall: 'discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_companies=3166',
     },
-  ]
+  ],
+  disneySeries: []
 });

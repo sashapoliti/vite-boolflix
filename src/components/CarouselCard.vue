@@ -33,10 +33,11 @@
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
       border-color: $c-text;
     }
     img {
+      aspect-ratio: 16/9;
       max-height: 167px;
       border-radius: 15px;
       border: 2px solid $border;
