@@ -1,12 +1,15 @@
 <template>
   <div class="carousel d-flex">
     <button @click="prev" class="prev d-flex align-items-center">
-      <i class="fa-solid fa-chevron-left "></i>
+      <i class="fa-solid fa-chevron-left"></i>
     </button>
-    <div class="slide d-flex align-items-center justify-content-center ">
+    <div class="slide d-flex align-items-center justify-content-center">
       <img :src="storage.jumboSlides[visibleSlide]" alt="" />
     </div>
-    <button @click="next" class="next d-flex align-items-center justify-content-end">
+    <button
+      @click="next"
+      class="next d-flex align-items-center justify-content-end"
+    >
       <i class="fa-solid fa-chevron-right"></i>
     </button>
   </div>
@@ -24,6 +27,9 @@ export default {
       visibleSlide: 0,
     };
   },
+  mounted() {
+    this.interval = setInterval(this.next, 5000);
+  },
   methods: {
     next() {
       if (this.visibleSlide < this.storage.jumboSlides.length - 1) {
@@ -38,6 +44,9 @@ export default {
       } else {
         this.visibleSlide = this.storage.jumboSlides.length - 1;
       }
+    },
+    beforeUnmount() {
+      clearInterval(this.interval);
     },
   },
 };
