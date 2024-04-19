@@ -73,7 +73,7 @@ export default {
     .logo {
       width: 500px;
       position: absolute;
-      left: 100px;
+      left: 200px;
       img {
         width: 100%;
         filter: drop-shadow(5px 4px 5px rgb(0, 0, 0));

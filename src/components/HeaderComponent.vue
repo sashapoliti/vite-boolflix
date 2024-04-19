@@ -6,7 +6,12 @@
     <nav>
       <ul class="d-flex align-items-center h-100">
         <li>
-          <a href="#" @click.prevent="this.storage.showHome = true, this.storage.options.params.query = ''"
+          <a
+            href="#"
+            @click.prevent="
+              (this.storage.showHome = true),
+                (this.storage.options.params.query = '')
+            "
             ><i class="fa-solid fa-house"></i> <span>Home</span></a
           >
         </li>
@@ -45,10 +50,17 @@
       </button>
     </div>
     <!-- profile -->
-    <div class="profile ms-auto d-flex align-items-center">
+    <div class="profile ms-auto d-flex align-items-center" @mouseenter="isDropdownOpen = true" @mouseleave="isDropdownOpen = false">
       <span>Sasha Politi</span>
       <div class="icon">
         <img src="/images/profileicon.png" alt="Profile Icon" />
+      </div>
+      <div class="dropdown" v-if="isDropdownOpen">
+        <ul>
+          <li><a @click.prevet="" href="#">Account</a></li>
+          <li><a @click.prevet="" href="#">Settings</a></li>
+          <li><a @click.prevet="" href="#">Logout</a></li>
+        </ul>
       </div>
     </div>
   </header>
@@ -61,6 +73,7 @@ export default {
   data() {
     return {
       storage,
+      isDropdownOpen: false,
     };
   },
 };
@@ -131,8 +144,41 @@ header {
     }
   }
   .profile {
+    padding-left: 10px;
     font-size: 0.9rem;
     color: $c-text;
+    border: 1px solid transparent;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid white;
+      border-bottom: 0;
+    }
+    .dropdown {
+      width: 195px;
+      position: absolute;
+      bottom: calc(-127% - 1px);
+      right: 0;
+      background-color: $bg-header;
+      border: 1px solid white;
+      border-top: none;
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          a {
+            display: block;
+            padding: 8px 12px;
+            color: $c-text;
+            text-decoration: none;
+            &:hover {
+              background-color: $c-text;
+              color: $bg-header;
+            }
+          }
+        }
+      }
+    }
   }
 }
 </style>
