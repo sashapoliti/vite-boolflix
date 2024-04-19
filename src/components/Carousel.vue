@@ -3,8 +3,11 @@
     <button @click="prev" class="prev d-flex align-items-center">
       <i class="fa-solid fa-chevron-left"></i>
     </button>
-    <div class="slide d-flex align-items-center justify-content-center">
-      <img :src="storage.jumboSlides[visibleSlide]" alt="" />
+    <div class="slide d-flex align-items-center justify-content-center position-relative ">
+      <div class="logo">
+        <img :src="storage.jumboSlides[visibleSlide].logo" alt="">
+      </div>
+      <img :src="storage.jumboSlides[visibleSlide].image" alt="" />
     </div>
     <button
       @click="next"
@@ -66,6 +69,15 @@ export default {
       height: 100%;
       object-fit: cover;
       cursor: pointer;
+    }
+    .logo {
+      width: 500px;
+      position: absolute;
+      left: 100px;
+      img {
+        width: 100%;
+        filter: drop-shadow(5px 4px 5px rgb(0, 0, 0));
+      }
     }
   }
   button {

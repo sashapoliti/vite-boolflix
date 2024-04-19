@@ -21,12 +21,30 @@ export const storage = reactive({
   series: [],
   trending: [],
   jumboSlides: [
-    "/images/wish.jpg",
-    "/images/simpson.jpg",
-    "/images/guardians.jpg",
-    "/images/insideout.jpg",
-    "/images/natgeo.jpg",
-    "/images/more.jpg",
+    {
+      image: "/images/wish.jpg",
+      logo: "/images/wish_logo.png",
+    },
+    {
+      image: "/images/simpson.jpg",
+      logo: "/images/simpson_logo.png",
+    },
+    {
+      image: "/images/guardians.jpg",
+      logo: "/images/guardians_logo.png",
+    },
+    {
+      image: "/images/insideout.jpg",
+      logo: "/images/inside_logo.png",
+    },
+    {
+      image: "/images/natgeo.jpg",
+      logo: "/images/natgeo_logo.png",
+    },
+    {
+      image: "/images/more.jpg",
+      logo: "/images/more_logo.png",
+    }
   ],
   filterMenu: [
     {
