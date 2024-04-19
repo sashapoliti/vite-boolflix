@@ -33,7 +33,6 @@ export default {
           this.storage.options
         )
         .then((res) => {
-          console.log(res.data.results);
           this.storage.movies = res.data.results;
         });
     },
@@ -44,12 +43,24 @@ export default {
           this.storage.options
         )
         .then((res) => {
-          console.log(res.data.results);
           this.storage.series = res.data.results;
         });
     },
+    getDisney() {
+      axios
+        .get(
+          this.storage.apiUrl + this.storage.filterMenu[0].apiCall,
+          this.storage.options          
+        )
+        .then((res) => {
+          console.log(res.data.results);
+          this.storage.filterMenu[0].movies = res.data.results;
+        })
+    }
   },
-  created() {},
+  created() {
+    this.getDisney();
+  },
 };
 </script>
 

@@ -7,6 +7,13 @@
       <div class="filter-cards d-flex justify-content-between">
         <HomeMenuCard v-for="card in storage.filterMenu" :media="card" />
       </div>
+
+      <div class="disney-classics">
+        <h4>Disney Classics</h4>
+        <CarouselList :cards="storage.filterMenu[0].movies" />
+      </div>
+
+      ciao
     </section>
 
     <!-- section for search movies -->
@@ -28,12 +35,14 @@ import { storage } from "../data/storage.js";
 import CardList from "./CardList.vue";
 import Carousel from "./Carousel.vue";
 import HomeMenuCard from "./HomeMenuCard.vue";
+import CarouselList from "./CarouselList.vue";
 export default {
   name: "MainComponent",
   components: {
     CardList,
     Carousel,
     HomeMenuCard,
+    CarouselList,
   },
   data() {
     return {
@@ -55,7 +64,13 @@ main {
     max-width: 1800px;
     color: $c-text;
     .filter-cards {
-      margin: 60px;
+      margin: 60px 50px;
+    }
+    .disney-classics {
+      margin: 0 50px;
+      h4 {
+        font-weight: 600;
+      }
     }
   }
   h2 {

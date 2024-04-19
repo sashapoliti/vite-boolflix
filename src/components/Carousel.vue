@@ -1,10 +1,14 @@
 <template>
-  <div class="carousel d-flex ">
-      <button @click="next" class="next">Next</button>
-      <div class="slide">
-        <img :src="storage.jumboSlides[visibleSlide]" alt=""> 
-      </div>     
-      <button @click="prev" class="prev">Prev</button>
+  <div class="carousel d-flex">
+    <button @click="prev" class="prev d-flex align-items-center">
+      <i class="fa-solid fa-chevron-left "></i>
+    </button>
+    <div class="slide">
+      <img :src="storage.jumboSlides[visibleSlide]" alt="" />
+    </div>
+    <button @click="next" class="next d-flex align-items-center justify-content-end">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
   </div>
 </template>
 
@@ -13,8 +17,7 @@ import { storage } from "../data/storage.js";
 
 export default {
   name: "Carousel",
-  components: {
-  },
+  components: {},
   data() {
     return {
       storage,
@@ -51,17 +54,12 @@ export default {
     box-shadow: 0 2px 8px 3px #000;
   }
   button {
+    font-size: 2.7rem;
     height: 100%;
     width: 50px;
     border: none;
     background-color: transparent;
     color: white;
-    &.next {
-      padding-right: 10px;
-    }
-    &.prev {
-      padding-left: 10px;
-    }
   }
 }
 </style>

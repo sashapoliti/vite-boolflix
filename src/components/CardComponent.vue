@@ -6,6 +6,7 @@
 
 <script>
 import { storage } from "../data/storage.js";
+
 export default {
   name: "CardComponent",
   props: {
@@ -17,11 +18,7 @@ export default {
     };
   },
   methods: {},
-  computed: {
-    transformVote() {
-      return Math.ceil(this.media.vote_average / 2);
-    },
-  },
+  computed: {},
 };
 </script>
 

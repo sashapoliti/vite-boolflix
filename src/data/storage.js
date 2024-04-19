@@ -28,31 +28,37 @@ export const storage = reactive({
         companie: 'Disney',
         image: 'disney_logo.png',
         background: 'disney_bg.jpg',
-        overEffect: false
+        overEffect: false,
+        apiCall: 'discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_companies=3166',
+        movies: []
     },
     {
         companie: 'Pixar',
         image: 'pixar_logo.png',
         background: 'pixar_bg.jpg',
-        overEffect: false
+        overEffect: false,
+        apiCall: 'discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_companies=3166',
     },
     {
         companie: 'Marvel',
         image: 'marvel_logo.png',
         background: 'marvel_bg.jpg',
-        overEffect: false
+        overEffect: false,
+        apiCall: 'discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_companies=3166',
     },
     {
         companie: 'Star Wars',
         image: 'starwars_logo.png',
         background: 'starwars_bg.jpg',
-        overEffect: false
+        overEffect: false,
+        apiCall: 'discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_companies=3166',
     },
     {
         companie: 'National Geographic',
         image: 'natgeo_logo.png',
         background: 'natgeo_bg.jpg',
-        overEffect: false
+        overEffect: false,
+        apiCall: 'discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_companies=3166',
     },
   ]
 });
