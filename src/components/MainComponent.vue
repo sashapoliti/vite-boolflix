@@ -1,7 +1,7 @@
 <template>
   <main>
     <!-- main section - home -->
-    <section class="home" v-if="!storage.options.params.query">
+    <section class="home" v-if="storage.showHome">
       <Carousel />
 
       <div class="filter-cards d-flex justify-content-between">
@@ -35,13 +35,13 @@
     </section>
 
     <!-- section for search movies -->
-    <section v-if="storage.options.params.query">
+    <section v-if="!storage.showHome">
       <h2>Movies</h2>
       <CardList :cards="storage.movies" />
     </section>
 
     <!-- section for search series -->
-    <section v-if="storage.options.params.query" class="mt-4">
+    <section v-if="!storage.showHome" class="mt-4">
       <h2>Series</h2>
       <CardList :cards="storage.series" />
     </section>

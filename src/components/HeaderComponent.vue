@@ -6,7 +6,7 @@
     <nav>
       <ul class="d-flex align-items-center h-100">
         <li>
-          <a href="#" @click.prevent=""
+          <a href="#" @click.prevent="this.storage.showHome = true"
             ><i class="fa-solid fa-house"></i> <span>Home</span></a
           >
         </li>

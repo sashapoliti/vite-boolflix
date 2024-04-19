@@ -16,6 +16,7 @@ export const storage = reactive({
   },
   imageUrl: "https://image.tmdb.org/t/p/original",
   showVideo: false,
+  showHome: true,
   movies: [],
   series: [],
   trending: [],

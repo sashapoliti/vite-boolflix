@@ -35,6 +35,7 @@ export default {
       if (this.storage.options.params.query) {
         this.getMovies();
         this.getSeries();
+        this.storage.showHome = false;
       }
     },
     getMovies() {
