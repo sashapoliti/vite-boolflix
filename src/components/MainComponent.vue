@@ -21,8 +21,8 @@
               <img src="/images/more_logo.png" alt="">
               <button>View More</button>
             </div>
-            <div class="w-75">              
-              <CarouselList :cards="storage.trending" />
+            <div class="w-75 h-100 ">              
+              <StretchCarouselList :cards="storage.trending" />
             </div>
           </div>
         </div>
@@ -54,6 +54,8 @@ import CardList from "./CardList.vue";
 import Carousel from "./Carousel.vue";
 import HomeMenuCard from "./HomeMenuCard.vue";
 import CarouselList from "./CarouselList.vue";
+import StretchCarouselList from "./StretchCarouselList.vue";
+
 export default {
   name: "MainComponent",
   components: {
@@ -61,6 +63,7 @@ export default {
     Carousel,
     HomeMenuCard,
     CarouselList,
+    StretchCarouselList,
   },
   data() {
     return {
@@ -90,7 +93,7 @@ main {
       }
       .wrap-more {
         width: 100vw;
-        height: 300px;
+        height: 350px;
         margin-left: -80px;
         margin-bottom: 50px;
         background-image: url("/images/watchmore.jpg");
